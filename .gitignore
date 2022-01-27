@@ -17,6 +17,8 @@
 /build
 
 /contract/res/kickstart.wasm
+/dist
+.cache
 
 # misc
 .DS_Store
