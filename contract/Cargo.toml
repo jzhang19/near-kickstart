@@ -1,7 +1,7 @@
 [package]
-name = "greeter"
+name = "kickstart"
 version = "0.1.0"
-authors = ["Near Inc <hello@near.org>"]
+authors = ["usalanzhang.near"]
 edition = "2018"
 
 [lib]

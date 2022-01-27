@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /out
+/contract/target
 
 #keys
 /neardev
@@ -14,6 +15,8 @@
 
 # production
 /build
+
+/contract/res/kickstart.wasm
 
 # misc
 .DS_Store
