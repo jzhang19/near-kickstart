@@ -1,0 +1,52 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 25%; */
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    padding: 3%;
+    border: 3px solid #212121;
+}
+
+#login-form-container {
+    width: 25%;
+}
+
+
+#form-container, input, label, button {
+    justify-content: center;
+}
+
+input, label, button {
+    display: grid;
+}
+
+input, label, textarea {
+    width: 90%;
+    margin: auto;
+}
+
+input {
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.submit-button {
+    width: 50%;
+    padding: 3%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: transparent;
+}
+
+.submit-button:hover {
+    background-color: #212121;
+    color: #EBFEFF;
+}
+
+button:active {
+    
+    background-color: #a0e0e3;
+    color: #212121;
+}
