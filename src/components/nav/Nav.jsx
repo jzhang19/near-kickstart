@@ -25,7 +25,7 @@ const Nav = () => {
           ? <div className="nav-links">
           <Link className={`${location.pathname === '/' ? 'active' : ''}`}to="/">Home</Link>
           <Link className={`${location.pathname === '/login/' ? 'active' : ''}`} to="/login/">Login</Link>
-          <Link className={`${location.pathname === '/sign-up/' ? 'active' : ''}`} to="/sign-up/">Sign up!</Link>
+          {/* <Link className={`${location.pathname === '/sign-up/' ? 'active' : ''}`} to="/sign-up/">Sign up!</Link> */}
           </div>
           : <div className="nav-links">
           <Link className={`${location.pathname === '/' ? 'active' : ''}`}to="/">Home</Link>
