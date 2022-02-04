@@ -57,7 +57,7 @@ window.nearInitPromise = initContract().then(
         contract={contract}
         currentUser={currentUser}
         nearConfig={nearConfig}
-        wallet={walletConnection}
+        walletConnection={walletConnection}
       />,
       document.getElementById('app')
     );

@@ -19,42 +19,20 @@ import SignUpPage from "./pages/SignUpPage"
 import DonationPage from "./pages/DonationPage"
 import ThankYouPage from "./pages/ThankYouPage"
 
-const App = ({ contract, currentUser, nearConfig, wallet }) => {
+const App = ({ contract, currentUser, nearConfig, walletConnection }) => {
 
-  const signIn = () => {
-    wallet.requestSignIn(
-      {contractId: nearConfig.contractName}, //contract requesting access
-      'NEAR Kickstart', //optional name
-      null, //optional URL to redirect to if the sign in was successful
-      null //optional URL to redirect to if the sign in was NOT successful
-    );
-  };
-
-  const signOut = () => {
-    wallet.signOut();
-    window.location.replace(window.location.origin + window.location.pathname);
-  };
 
   return (
     <main>
-      <header>
-        <h1>NEAR Guest Book</h1>
-        { currentUser
-          ? <button onClick={signOut}>Log out</button>
-          : <button onClick={signIn}>Log in</button>
-        }
-      </header>
-      { currentUser
-        ? 
-            currentUser.accountId + ' ' + Big(currentUser.balance).div(10 ** 24) + 'Ⓝ'
-        : ""
-      }
-      { !!currentUser }
-    
       <div>
         <Router>
           {/* we define our links inside here. This is how we change pages */}
-          <NavigationComponent />
+          <NavigationComponent 
+            contract={contract}
+            currentUser={currentUser}
+            nearConfig={nearConfig}
+            walletConnection={walletConnection}
+          />
           {/* When our route changes in the url, we then render the correct page */}
           <Switch>
             <Route exact path="/">
@@ -85,20 +63,20 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   )
 }
 
-App.propTypes = {
-  contract: PropTypes.shape({
-  }).isRequired,
-  currentUser: PropTypes.shape({
-    accountId: PropTypes.string.isRequired,
-    balance: PropTypes.string.isRequired
-  }),
-  nearConfig: PropTypes.shape({
-    contractName: PropTypes.string.isRequired
-  }).isRequired,
-  wallet: PropTypes.shape({
-    requestSignIn: PropTypes.func.isRequired,
-    signOut: PropTypes.func.isRequired
-  }).isRequired
-};
+// App.propTypes = {
+//   contract: PropTypes.shape({
+//   }).isRequired,
+//   currentUser: PropTypes.shape({
+//     accountId: PropTypes.string.isRequired,
+//     balance: PropTypes.string.isRequired
+//   }),
+//   nearConfig: PropTypes.shape({
+//     contractName: PropTypes.string.isRequired
+//   }).isRequired,
+//   wallet: PropTypes.shape({
+//     requestSignIn: PropTypes.func.isRequired,
+//     signOut: PropTypes.func.isRequired
+//   }).isRequired
+// };
 
 export default App
