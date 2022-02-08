@@ -39,7 +39,7 @@ const App = ({ contract, currentUser, nearConfig, walletConnection }) => {
             {/* When our route changes in the url, we then render the correct page */}
             <Switch>
               <Route exact path="/">
-                <Home />
+                <Home currentUser={currentUser} />
               </Route>
               <Route path="/project/:id">
                 <Projects />

@@ -57,13 +57,11 @@ const Nav = ({ contract, currentUser, nearConfig, walletConnection }) => {
           <li><a href="pricing.html">Pricing</a></li>
         </ul>
         <ul className="list-inline pull-right">
-          <li><a href="login.html">Sing in</a></li>
           <li><a href="cart.html">Your Cart</a></li>
         </ul>
-        <span> { currentUser ? <button onClick={signOut}>Log out</button> : <button onClick={signIn}>Log in</button> }
-          { currentUser ? currentUser.accountId + ' ' + Big(currentUser.balance).div(10 ** 24) + 'Ⓝ' : "" }
-          { !!currentUser }
-        </span>
+        <div>
+          { currentUser ? <button type="button" onClick={signOut}>Log out</button>  : <button type="button" onClick={signIn}>Log in</button> }
+        </div>
       </nav>
     </div>
   )
