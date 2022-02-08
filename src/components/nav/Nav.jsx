@@ -21,24 +21,49 @@ const Nav = ({ contract, currentUser, nearConfig, walletConnection }) => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <a href="index.html" className="logo pull-left">
+        <img src={require('../../assets/logo-black.svg')} alt="logo"/>
+      </a>
       <nav className="navbar">
-        <div>
-          { currentUser
-            ? <button onClick={signOut}>Log out</button>
-            : <button onClick={signIn}>Log in</button>
-          }
-          { currentUser
-          ? 
-              currentUser.accountId + ' ' + Big(currentUser.balance).div(10 ** 24) + 'Ⓝ'
-          : ""
-          }
-          { !!currentUser }
+        <div className="dropdown pull-left">
+          <a data-toggle="dropdown" href="#">Store <b className="caret"></b></a>
+          <ul className="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="browse.html">Browse Page</a></li>
+            <li><a href="single_item.html">Single Item Page</a></li>
+            <li><a href="single_item_themeforest_affiliate.html">Single Item Themeforest Affiliate Page</a></li>
+            <li><a href="login.html">Login Page</a></li>
+            <li><a href="signup.html">Signup Page</a></li>
+            <li><a href="services.html">Services Page</a></li>
+            <li><a href="order_service.html">Order Service Page</a></li>
+            <li><a href="cart.html">Cart Page</a></li>
+            <li><a href="downloads.html">Downloads Page</a></li>
+            <li><a href="works.html">Works Page</a></li>
+            <li><a href="case_study.html">Case Study Page</a></li>
+            <li><a href="pricing.html">Pricing Page</a></li>
+            <li><a href="knowledge_base.html">Knowledge Base Page</a></li>
+            <li><a href="knowledge_base_browse_topic.html">Knowledge Base Browse Topic Page</a></li>
+            <li><a href="knowledge_base_single_topic.html">Knowledge Base Single Topic Page</a></li>
+            <li><a href="contact_support.html">Contact Support Page</a></li>
+            <li><a href="about_us.html">About Us Page</a></li>
+          </ul>
         </div>
+        <ul className="list-inline pull-left">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact_support.html">Support</a></li>
+          <li><a href="works.html">Custom Job</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+        <ul className="list-inline pull-right">
+          <li><a href="login.html">Sing in</a></li>
+          <li><a href="cart.html">Your Cart</a></li>
+        </ul>
+        <span> { currentUser ? <button onClick={signOut}>Log out</button> : <button onClick={signIn}>Log in</button> }
+          { currentUser ? currentUser.accountId + ' ' + Big(currentUser.balance).div(10 ** 24) + 'Ⓝ' : "" }
+          { !!currentUser }
+        </span>
       </nav>
-      <div id="img-div">
-        <img id="logo" src={require('../../assets/logo-black.svg')} alt="locally"/>
-      </div>
     </div>
   )
 }
