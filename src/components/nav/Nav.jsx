@@ -1,5 +1,6 @@
 // npm modules from https://npm.js.com/
 import React, {useState} from "react"
+import { Link, useLocation, useHistory } from "react-router-dom"
 import Big from 'big.js';
 import "./Nav.css"
 
@@ -22,9 +23,9 @@ const Nav = ({ contract, currentUser, nearConfig, walletConnection }) => {
 
   return (
     <div className="container">
-      <a href="index.html" className="logo pull-left">
+      <Link to="/" className="logo pull-left">
         <img src={require('../../assets/logo-black.svg')} alt="logo"/>
-      </a>
+      </Link>
       <nav className="navbar">
         <div className="dropdown pull-left">
           <a data-toggle="dropdown" href="#">Store <b className="caret"></b></a>
