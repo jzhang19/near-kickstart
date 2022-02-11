@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from "react"
 import { useParams, useHistory } from "react-router-dom";
 import { allProjects } from "../data"
+import * as nearAPI from 'near-api-js';
 
-
-const ProjectPage = () => {
+const ProjectPage = ({ contract, currentUser }) => {
     
     const [projectData, setProjectData] = useState({});
     const { id } = useParams();
@@ -11,6 +11,11 @@ const ProjectPage = () => {
     useEffect(() => {
         const project = allProjects.find(project => project['id'] == id);
         console.log(project);
+        console.log(currentUser);
+        console.log(contract);
+        contract.display({account_id: currentUser.accountId}).then(data => {
+            console.log(data);
+        });
         setProjectData(project);
     });
 

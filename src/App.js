@@ -42,7 +42,7 @@ const App = ({ contract, currentUser, nearConfig, walletConnection }) => {
                 <Home currentUser={currentUser} />
               </Route>
               <Route path="/project/:id">
-                <Projects />
+                <Projects contract={contract} currentUser={currentUser} />
               </Route>
               <Route path="/login">
                 <Login />
@@ -67,20 +67,22 @@ const App = ({ contract, currentUser, nearConfig, walletConnection }) => {
   )
 }
 
-// App.propTypes = {
-//   contract: PropTypes.shape({
-//   }).isRequired,
-//   currentUser: PropTypes.shape({
-//     accountId: PropTypes.string.isRequired,
-//     balance: PropTypes.string.isRequired
-//   }),
-//   nearConfig: PropTypes.shape({
-//     contractName: PropTypes.string.isRequired
-//   }).isRequired,
-//   wallet: PropTypes.shape({
-//     requestSignIn: PropTypes.func.isRequired,
-//     signOut: PropTypes.func.isRequired
-//   }).isRequired
-// };
+App.propTypes = {
+  contract: PropTypes.shape({
+    contribute: PropTypes.func.isRequired,
+    display: PropTypes.func.isRequired
+  }).isRequired,
+  currentUser: PropTypes.shape({
+    accountId: PropTypes.string.isRequired,
+    balance: PropTypes.string.isRequired
+  }),
+  nearConfig: PropTypes.shape({
+    contractName: PropTypes.string.isRequired
+  }).isRequired,
+  walletConnection: PropTypes.shape({
+    requestSignIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default App

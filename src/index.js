@@ -40,10 +40,14 @@ async function initContract() {
     // accounts can only have one contract deployed to them.
     nearConfig.contractName,
     {
-      // Sender is the account ID to initialize transactions.
-      // getAccountId() will return empty string if user is still unauthorized
-      sender: walletConnection.getAccountId(),
-    }
+        // View methods are read-only – they don't modify the state, but usually return some value
+        viewMethods: ['display'],
+        // Change methods can modify the state, but you don't receive the returned value when called
+        changeMethods: ['contribute'],
+        // Sender is the account ID to initialize transactions.
+        // getAccountId() will return empty string if user is still unauthorized
+        sender: walletConnection.getAccountId(),
+        }
   );
 
   return { contract, currentUser, nearConfig, walletConnection };

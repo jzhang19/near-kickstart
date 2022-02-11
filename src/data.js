@@ -24,7 +24,7 @@ export const allProjects = [
         title: "Mynd Bender: A Modern Take on \"The Monkey's Claw\"",
         description: "A \"three wishes\" horror story that reminds us, \"Be careful what you wish for, you may receive it.\"",
         goal: 150,
-        image: "https://ksr-ugc.imgix.net/assets/036/306/303/c055b7f10b7a9ecfe4ed87053fda853b_original.JPG?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644365322&auto=format&frame=1&q=92&s=2622bee5136369a0d8569ce190d3c1bb",
+        image: "https://ksr-ugc.imgix.net/assets/022/105/482/18c07ff88f552343404cda63013484bd_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1533996157&auto=format&frame=1&q=92&s=a020a76bc0e2a13775ebd47e1b84661d",
         is_open: false,
         date_created: "2020-02-20T14:28:23.382748Z",
         owner: 1,

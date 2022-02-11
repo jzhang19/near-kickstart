@@ -1,4 +1,4 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME ||'test.kickstart.testnet'
+const CONTRACT_NAME = process.env.CONTRACT_NAME ||'kickstart.testnet'
 
 function getConfig(env) {
   switch (env) {
